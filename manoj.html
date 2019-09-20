@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script type="text/javascript">
+    function old(day, month, year) {
+    return new Date(year+18, month-1, day) <= new Date();
+}
+
+
+type =['graduation','Postgraduation'];
+
+data=[['ECE','CSE','EEE'],['MS','MTECH','CA'],];
+
+
+function fillDD()
+{
+var Typedd =document.getElementById('type');
+    for(i=0;i<type.length;i++)
+    {
+    var ele= document.createElement('option');
+    ele.text=type[i];
+    Typedd.add(ele,i+1);
+
+    }
+}
+
+
+function fillData()
+{
+
+var Typedd =document.getElementById('type');
+var selectedIdx= Typedd.selectedIndex;
+
+var Datadd =document.getElementById('data');
+
+Datadd.innerText=null;
+var ele=document.createElement('option');
+ele.text="SELECT";
+Datadd.add(ele,0);
+
+for(i=0;i<data[selectedIdx-1].length;i++)
+{
+var ele=document.createElement('option');
+ele.text=data[selectedIdx-1][i];
+Datadd.add(ele,i+1);
+
+}
+
+}
+
+
+		function validate()
+{
+  var a=document.getElementById('f1').value;
+  var b=document.getElementById('f2').value;
+  if(!(a==b))
+  {
+    alert("both passwords are not matching");
+  }
+}
+function dobValidate() {
+
+var date= new Date();
+
+var year=date.getFullYear();
+var year=year-18;
+var month=date.getMonth()+1;
+var dd=date.getDate();
+
+if(month<10)
+{
+month='0'+month;
+}
+if(dd<10)
+{
+dd=0+""+dd;
+}
+
+document.getElementById('dob').max=year+"-"+month+"-"+dd;
+
+}
+	</script>
+</head>
+<body onload="fillDD()">
+	
+    <div class="col-lg-3 col-md-3 col-sm-5">
+<div></div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-2">
+  <center><label><h1><b>Registration form</b></h1></label></center>
+	<form>
+		<div class="form-group">
+        <label for="inputEmail">First name</label>
+        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="inputEmail">Last name</label>
+        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="inputEmail">EDUCATION</label><br>
+    	<select for="inputEmail" id="type" onchange="fillData()">
+<option>Select Type</option>
+</select>
+
+<select id="data">
+<option>Select Course</option>
+</select>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail">DOB</label>
+        <input type="date" class="form-control" id="dob"  onclick="dobValidate()">
+    </div>
+    <div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" class="form-control" id="f1" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="inputPassword">confirm password</label>
+        <input type="password" class="form-control" id="f2" placeholder="confirm Password">
+    </div>
+
+    <button type="submit" class="btn btn-primary" onclick="validate()">Sign in</button>
+</form></div>
+<div class="col-lg-3 col-md-3 col-sm-5">
+<div></div>
+</div>
+
+
+</body>
+</html>
