@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function tableFill() {
+
+
+var array = [["1","virat","IIT","100","8"],
+["2","rohit","IIT","100","6"],
+["3","shikhar","JNU","90","6"],
+["4","rahul","IIT","80","4"],
+["5","dhoni","IISC","101","4"],
+];
+table = document.getElementById("myTable");
+
+for(var i = 0; i < array.length; i++)
+{
+var newRow = table.insertRow(table.length);
+for(var j = 0; j < array[i].length; j++)
+{
+var cell = newRow.insertCell(j);
+cell.innerHTML = array[i][j];
+}
+}
+}
+</script>
+</head>
+<body onload="tableFill()">
+
+<table id="myTable" border="2" width="80%">
+
+
+
+<tr>
+<th>Roll no</th>
+<th>Student Name</th>
+<th>College</th>
+<th>Marks</th>
+<th>Semester</th>
+</tr>
+
+
+</table>
+</body>
+</html>
+
+ 
+     

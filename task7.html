@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html onclick="showCoords(event)">
+<head>
+	<title></title>
+	<script type="text/javascript">
+		
+		function no(e){
+			//e=document.getElementById('tb').value;
+			//alert(e.which);
+			//
+			if(!(e.which>=65 && e.which<=90)){
+			e.preventDefault();	
+			}
+		}
+			function no1(e){
+			//e=document.getElementById('tb').value;
+			//alert(e.which);
+			//
+			if(!((e.which>=65 && e.which<=90) || (e.which>=97 && e.which<=122))){
+			e.preventDefault();	
+			}
+		}
+		function cur(){
+			document.getElementById('i').style.cursor="pointer";
+		}
+		function cur1(){
+			document.getElementById('j').style.display="none";
+		}
+		function showCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+  document.getElementById("demo").innerHTML = coords;
+}
+	function openWin() {
+  window.open("https://www.w3schools.com");
+}
+	function coc(){
+		var f=document.getElementById('fi').value;
+		var l=document.getElementById('la').value;
+		var fl= f+" "+l;
+		alert(fl);
+	}
+	function dtr(){
+		var d=prompt("enter dol");
+		var r=d*68;
+		alert("rs is"+r);
+
+	}
+
+	</script>
+</head>
+<body >
+	accepts only caps<input type="text" name="" id="tb" onkeypress="no(event)" maxlength="10">
+	accepts only alphabets<input type="text" name="" id="tb" onkeypress="no1(event)" maxlength="10">
+	<p id="i" onmouseover="cur()">cursor changing</p>
+	<img id="j" src="dog.jpg" onclick="cur1()">
+   <p id="demo"></p>
+   <p onclick="openWin()">new window</p>
+   <input type="text" name="" id="fi">
+   <input type="text" name="" id="la">
+   <input type="submit" onclick="coc()">
+   <button onclick="dtr()">d to r convo</button>
+</body>
+</html>

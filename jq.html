@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+ -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+/*$(function () {
+alert('hello world');
+});*/
+
+/*$(function(){
+ $("#xyz").keypress(
+  function(){
+  alert('hello')
+  })
+  })
+*/
+
+/*
+$(function(){
+ $(".test").click(
+  function(){
+  alert('hello')
+  })
+  })
+*/
+
+/*
+
+$(function(){
+ $(".test").
+ click(function(){ $('#xyz').hide()})
+  })
+
+*/
+$(function(){
+$(".sub").click(function(){
+	var v=$('#ip').val()
+  $(".a").append(v)});
+})
+
+
+</script>
+
+</head>
+<body>
+	<input type="text" name="" id="ip">
+<ol>
+	<li class="a">a</li>
+	<li>b</li>
+</ol>
+<input type="submit" name="" class="sub">
+
+
+
+</body>
+</html>
