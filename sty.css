@@ -1,0 +1,11 @@
+p{
+	color: red;
+}
+input,select,option,form{
+	background: rgba(0,0,0,0) ;
+
+}
+body{
+	background-repeat: no-repeat ;
+	background-size: 100% ;
+}

@@ -1,0 +1,38 @@
+---conn /as sysdba   : connect data with null password
+---conn dxc
+---select users from dual
+   dxc
+
+---sql>grant dba to dxc; (all permissions given)
+---sql>create schema authorization dxc;
+---sql>alter user hr account unlock;
+---sql>alter user hr identified by hr account unlock;
+
+char -- uses entire length
+varchar -- uses only occupied memories
+
+-----------------------------------------------------------------------------
+
+column level contrains slower than table lvl constraints.
+contraints name helps to disable primary keys.
+
+
+alter table clg drop constraint pk;
+
+alter table clg add constraint pk primary key(clgid);
+
+create table student(
+rno int,
+clgid  references college(clgid),
+sname varchar(20)
+
+);
+
+
+
+
+
+
+
+
+
